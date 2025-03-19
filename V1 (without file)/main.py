@@ -1,46 +1,8 @@
-import json
-
-def afficher_menu():
-    print("""
-    Gestion d'un dictionnaire
-    1. Ajout d'un mot
-    2. Suppression d'un mot
-    3. Recherche d'un mot
-    4. Affichage de tout le dictionnaire
-    0. Fin du programme
-    """)
-
-def ajouter_mot(dictionnaire):
-    mot = input("Entrez le mot à ajouter : ").lower()
-    if mot in dictionnaire:
-        print("Ce mot existe déjà !")
-    else:
-        definition = input("Entrez la définition : ")
-        dictionnaire[mot] = definition
-        print(f"Mot '{mot}' ajouté avec succès !")
-
-def supprimer_mot(dictionnaire):
-    mot = input("Entrez le mot à supprimer : ").lower()
-    if mot in dictionnaire:
-        del dictionnaire[mot]
-        print(f"Mot '{mot}' supprimé avec succès !")
-    else:
-        print("Ce mot n'existe pas dans le dictionnaire.")
-
-def rechercher_mot(dictionnaire):
-    mot = input("Entrez le mot à rechercher : ").lower()
-    if mot in dictionnaire:
-        print(f"Définition de '{mot}' : {dictionnaire[mot]}")
-    else:
-        print("Ce mot n'existe pas dans le dictionnaire.")
-
-def afficher_dictionnaire(dictionnaire):
-    if dictionnaire:
-        print("\nDictionnaire complet :")
-        for mot, definition in sorted(dictionnaire.items()):
-            print(f"{mot} : {definition}")
-    else:
-        print("Le dictionnaire est vide.")
+import afficher_menu
+import ajouter_mot
+import supprimer_mot
+import rechercher_mot
+import afficher_dictionnaire
 
 def main():
     dictionnaire = {
@@ -71,17 +33,17 @@ def main():
         "zèbre": "Mammifère africain reconnaissable à ses rayures noires et blanches."
     }
     while True:
-        afficher_menu()
+        afficher_menu.afficher_menu()
         choix = input("Votre choix : ")
         match choix:
             case "1":
-                ajouter_mot(dictionnaire)
+                ajouter_mot.ajouter_mot(dictionnaire)
             case "2":
-                supprimer_mot(dictionnaire)
+                supprimer_mot.supprimer_mot(dictionnaire)
             case "3":
-                rechercher_mot(dictionnaire)
+                rechercher_mot.rechercher_mot(dictionnaire)
             case "4":
-                afficher_dictionnaire(dictionnaire)
+                afficher_dictionnaire.afficher_dictionnaire(dictionnaire)
             case "0":
                 print("Fin du programme.")
                 break

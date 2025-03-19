@@ -7,5 +7,5 @@ def ajouter_mot(dictionnaire):
     else:
         definition = input("Entrez la définition : ")
         dictionnaire[mot] = definition
-        sauvegarder_dictionnaire(dictionnaire)
+        sauvegarder_dictionnaire.sauvegarder_dictionnaire(dictionnaire)
         print(f"Mot '{mot}' ajouté avec succès !")

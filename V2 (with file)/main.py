@@ -6,19 +6,19 @@ import rechercher_mot
 import afficher_dictionnaire
 
 def main():
-    dictionnaire = charger_dictionnaire()
+    dictionnaire = charger_dictionnaire.charger_dictionnaire()
     while True:
-        afficher_menu()
+        afficher_menu.afficher_menu()
         choix = input("Votre choix : ")
         match choix:
             case "1":
-                ajouter_mot(dictionnaire)
+                ajouter_mot.ajouter_mot(dictionnaire)
             case "2":
-                supprimer_mot(dictionnaire)
+                supprimer_mot.supprimer_mot(dictionnaire)
             case "3":
-                rechercher_mot(dictionnaire)
+                rechercher_mot.rechercher_mot(dictionnaire)
             case "4":
-                afficher_dictionnaire(dictionnaire)
+                afficher_dictionnaire.afficher_dictionnaire(dictionnaire)
             case "0":
                 print("Fin du programme.")
                 break
