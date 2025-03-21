@@ -33,7 +33,7 @@ def main():
         "zèbre": "Mammifère africain reconnaissable à ses rayures noires et blanches."
     }
     while True:
-        afficher_menu.afficher_menu()
+        afficher_menu.afficher_menu(dictionnaire)
         choix = input("Votre choix : ")
         match choix:
             case "1":

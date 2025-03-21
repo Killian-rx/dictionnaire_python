@@ -5,11 +5,16 @@ import supprimer_mot
 import rechercher_mot
 import afficher_dictionnaire
 
+
 def main():
+    # Charger le dictionnaire depuis le fichier JSON
     dictionnaire = charger_dictionnaire.charger_dictionnaire()
+
     while True:
-        afficher_menu.afficher_menu()
+        # Afficher le menu en passant dictionnaire en argument
+        afficher_menu.afficher_menu(dictionnaire)  # Pass the dictionnaire argument
         choix = input("Votre choix : ")
+
         match choix:
             case "1":
                 ajouter_mot.ajouter_mot(dictionnaire)
@@ -24,6 +29,7 @@ def main():
                 break
             case _:
                 print("Choix invalide, veuillez réessayer.")
+
 
 if __name__ == "__main__":
     main()
