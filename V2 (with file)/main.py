@@ -4,6 +4,7 @@ import ajouter_mot
 import supprimer_mot
 import rechercher_mot
 import afficher_dictionnaire
+import modifier_mot
 
 
 def main():
@@ -12,7 +13,7 @@ def main():
 
     while True:
         # Afficher le menu en passant dictionnaire en argument
-        afficher_menu.afficher_menu(dictionnaire)  # Pass the dictionnaire argument
+        afficher_menu.afficher_menu(dictionnaire)
         choix = input("Votre choix : ")
 
         match choix:
@@ -24,12 +25,13 @@ def main():
                 rechercher_mot.rechercher_mot(dictionnaire)
             case "4":
                 afficher_dictionnaire.afficher_dictionnaire(dictionnaire)
+            case "5":
+                modifier_mot.modifier_mot(dictionnaire)  # Ajout de l'option de modification
             case "0":
                 print("Fin du programme.")
                 break
             case _:
                 print("Choix invalide, veuillez réessayer.")
-
 
 if __name__ == "__main__":
     main()
