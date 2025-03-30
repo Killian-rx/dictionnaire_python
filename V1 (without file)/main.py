@@ -3,6 +3,7 @@ import ajouter_mot
 import supprimer_mot
 import rechercher_mot
 import afficher_dictionnaire
+import modifier_mot
 
 def main():
     dictionnaire = {
@@ -44,6 +45,8 @@ def main():
                 rechercher_mot.rechercher_mot(dictionnaire)
             case "4":
                 afficher_dictionnaire.afficher_dictionnaire(dictionnaire)
+            case "5":
+                modifier_mot.modifier_mot(dictionnaire)
             case "0":
                 print("Fin du programme.")
                 break
