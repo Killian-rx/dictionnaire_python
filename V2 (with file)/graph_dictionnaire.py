@@ -1,19 +1,16 @@
-
-import matplotlib as plt
+import matplotlib.pyplot as plt  # Corrected import
 
 def graph_dictionnaire(dictionnaire):
-    """
-    Affiche un graphique représentant le nombre de mots dans le dictionnaire.
-    """
     if dictionnaire:
-        for mot, definition in sorted(dictionnaire.items()):
-            longueurs = [len(definition.split())]
+        mots = list(dictionnaire.keys())
+        longueurs = [len(definition.split()) for definition in dictionnaire.values()]
 
         plt.figure(figsize=(10, 6))
-        plt.barh(definition, longueurs, color='skyblue')
-        plt.xlabel('Longueur du mot')
-        plt.ylabel('Mots')
-        plt.title('Longueur des mots dans le dictionnaire')
+        plt.bar(mots, longueurs, width=0.2, color='skyblue')
+        plt.ylabel('Longueur de la définition')
+        plt.xlabel('Mots')
+        plt.title('Longueur des définitions dans le dictionnaire')
+        plt.xticks(range(len(mots)), mots, rotation=45, ha='right')
         plt.show()
     else:
         print("Le dictionnaire est vide.")

@@ -10,6 +10,7 @@ def afficher_menu(dictionnaire):
     3. Recherche d'un mot
     4. Affichage de tout le dictionnaire
     5. Modifier un mot
+    6. Graphique du dictionnaire
     0. Fin du programme
     """)
 
